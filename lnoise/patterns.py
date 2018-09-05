@@ -35,7 +35,7 @@ HSPatterns = {
     'Noise_KK': HandshakePattern(('s', 'rs'), 's', 's',
                                  (('e', 'dhes', 'dhss'),
                                   ('e', 'dhes', 'dhss'),)),
-    'Noise_XK': HandshakePattern(('s', 'rs'), '', 's',
+    'Noise_XK': HandshakePattern(('s', 'rs'), 's', 's',
                                  (('e', 'dhes'),
                                   ('e', 'dhee'),
                                   ('s', 'dhse'),)),
@@ -57,4 +57,4 @@ HSPatterns = {
     'Noise_IX': HandshakePattern(('s', 'rs'), '', '',
                                  (('e', 's'),
                                   ('e', 'dhee', 'dhes', 's', 'dhse'),))
-    }
+}

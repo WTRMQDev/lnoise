@@ -1,17 +1,12 @@
-noise
+lnoise
 =====
 
-Python implementation of the [Noise Protocol
-Framework](https://noiseprotocol.org/)
+Python implementation of the [Noise Protocol Framework](https://noiseprotocol.org/) for bitcoin lightning.
 
-This is largely to help me understand the spec, but it would be nice to
-eventually have a usable library.
+Based on [effigies implementation of NPF](https://github.com/effigies/noise).
 
 Dependencies
 ------------
-The goal is to depend on [libsodium](https://github.com/jedisct1/libsodium/)
-bindings for Python.
-
-At present, two sets of bindings are required:
-* [libnacl](https://github.com/saltstack/libnacl/)
-* [pysodium](https://github.com/stef/pysodium/)
+* [tlslite](https://github.com/trevp/tlslite) for CHACHA20_POLY1305
+* [secp256k1-py](https://github.com/ludbb/secp256k1-py) for elliptic cryptography
+* standart library for sha256 and hmac
