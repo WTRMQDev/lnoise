@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/pypa/sampleproject", #TODO insert credentials
     packages=setuptools.find_packages(exclude=["example", ".git"]),
-    install_requires=['tlslite', 'secp256k1'],
+    install_requires=['chacha20poly1305', 'secp256k1'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Development Status :: 4 - Beta",

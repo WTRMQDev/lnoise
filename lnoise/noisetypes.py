@@ -1,6 +1,7 @@
 import hmac
 from hashlib import sha256
-from tlslite.utils.chacha20_poly1305 import CHACHA20_POLY1305 as chachapoly
+#from tlslite.utils.chacha20_poly1305 import CHACHA20_POLY1305 as chachapoly
+from chacha20poly1305 import ChaCha20Poly1305 as chachapoly
 
 from collections import namedtuple
 from .error import HashError, DecryptError
