@@ -6,14 +6,14 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="lnoise",
     version="0.1.0",
-    author="Example Author", #TODO insert credentials
-    author_email="author@example.com", #TODO insert credentials
+    author="Crez Khansick",
+    author_email="TetsuwanAtomu@tuta.io",
     description="Noise Protocol Framework library compatible with bitcoin lightning transport protocol",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject", #TODO insert credentials
+    url="https://github.com/WTRMQDev/lnoise",
     packages=setuptools.find_packages(exclude=["example", ".git"]),
-    install_requires=['chacha20poly1305', 'secp256k1'],
+    install_requires=['chacha20poly1305', 'secp256k1_zkp'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Development Status :: 4 - Beta",
