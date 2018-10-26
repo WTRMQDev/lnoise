@@ -49,6 +49,9 @@ class CipherState(object):
         self.n += 0 if external_nonce else 1
         return ret
 
+    def decrease_nonce(self):
+        self.n-=1
+
 
 class SymmetricState(object):
     def __init__(self, dh, cipher, hasher, protocol_name=None):
@@ -219,8 +222,7 @@ class HandshakeState(object):
             version_byte, message = message[:1], message[1:]
             if version_byte not in self.allowed_versions:
                 raise HandshakeError(
-                    "Message on transport level has unknown version byte: %s" %
-                    _(version_byte))
+                    "Message on transport level has unknown version byte: %s"%version_byte)
             message_pattern = self.message_patterns.pop(0)
             for token in message_pattern:
                 if token == 'e':
@@ -303,10 +305,13 @@ class Session:
         if not self.open:
             raise SessionError("Trying to decode message from closed session")
         try:
+            if len(message) < 18:
+                raise PartialData()
             lc, message = message[:18], message[18:]
             l = self.d.decrypt_with_ad(b'', lc)
             l = int.from_bytes(l, 'big')
             if len(message) < l + 16:
+                self.d.decrease_nonce() #When full message arrive we need same nonce to read it
                 raise PartialData()
             c, residue = message[:l + 16], message[l + 16:]
             payload = self.d.decrypt_with_ad(b'', c)
