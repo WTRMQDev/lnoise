@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="lnoise",
-    version="0.1.0",
+    version="0.1.1",
     author="Crez Khansick",
     author_email="TetsuwanAtomu@tuta.io",
     description="Noise Protocol Framework library compatible with bitcoin lightning transport protocol",
